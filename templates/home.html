@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>hello</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      font-size: 20px;
+      background-image: url("static/bmi-image.jpeg");
+      background-size: cover;
+    }
+
+    li {
+      list-style: none;
+    }
+
+    .container {
+      text-align: center;
+      gap: 20px;
+    }
+
+    .textbox {
+      height: 30px;
+      width: 800px;
+    }
+
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <h1 class="heading">BMI Calculator</h1>
+    <form action="/bmi" method="post">
+
+      <label for="age">Your Age</label>
+      <br>
+      <input name="age" type="number" class="input-age textbox" id="age" placeholder="Enter your age (years)">
+      <br><br>
+      <label for="height">Your height</label>
+      <br>
+      <input name="height" type="text" class="input-height textbox" id="height"
+        placeholder="Enter your Height (meters)">
+      <br><br>
+      <label for="weight">Your weight</label>
+      <br>
+      <input name="weight" type="text" class="input-weight textbox" id="weight" placeholder="Enter your Weight (kg)">
+      <br><br>
+      <button type="submit" class="btn-submit">Calculate BMI</button>
+
+    </form>
+
+  </div>
+
+</body>
+
+</html>

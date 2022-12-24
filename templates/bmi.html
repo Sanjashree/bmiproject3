@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BMI</title>
+
+  <style>
+    body {
+      font-family: sans-serif;
+      font-size: 20px;
+      background-image: url("static/bmi-image.jpeg");
+      background-size: cover;
+    }
+
+    li {
+      list-style: none;
+    }
+
+    ul {
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+    }
+
+    .container {
+      text-align: center;
+      gap: 20px;
+    }
+
+  </style>
+
+</head>
+
+<body>
+
+  <div class="container">
+
+    <h1>{{ weight/(height*height) }}</h1>
+    {% if weight/(height*height) < 16.0 %} <h1>Severe Thinness</h1>
+      <ul>
+        <li>Healthy BMI range: 18.5 kg/m2 - 25 kg/m2</li>
+        <li>Healthy weight for the height: 66.8 kgs - 90.3 kgs</li>
+        <li>Gain 58.8 kgs to reach a BMI of 18.5 kg/m2.</li>
+        <li>Ponderal Index: 1.2 kg/m3</li>
+      </ul>
+      {% elif weight/(height*height) > 16 and weight/(height*height) < 17 %} <h1>Moderate Thinness</h1>
+        <ul>
+          <li class="li">Healthy BMI range: 18.5kg/m2 - 25 kg/m</li>
+          <li>Healthy weight for the height: 66.8 kgs - 90.3 kgs</li>
+          <li>Gain 6.8 kgs to reach a BMI of 18.5 kg/m2.</li>
+          <li>Ponderal Index: 8.7 kg/m3</li>
+        </ul>
+        {% elif weight/(height*height) > 17 and weight/(height*height) < 18.5 %} <h1>Mild Thinness</h1>
+          <ul>
+            <li>Healthy BMI range: 18.5 kg/m2 - 25 kg/m2</li>
+            <li>Healthy weight for the height: 66.8 kgs - 90.3 kgs</li>
+            <li>Gain 2.8 kgs to reach a BMI of 18.5 kg/m2.</li>
+            <li>Ponderal Index: 9.3 kg/m3</li>
+          </ul>
+          {% elif weight/(height*height) > 18.5 and weight/(height*height) < 25%} <h1>Normal</h1>
+            <ul>
+              <li>Healthy BMI range: 18.5 kg/m2 - 25 kg/m2</li>
+              <li>Healthy weight for the height: 66.8 kgs - 90.3 kgs</li>
+              <li>Ponderal Index: 10.2 kg/m3</li>
+            </ul>
+            {% elif weight/(height*height) > 25 and weight/(height*height) < 30 %} <h1>Overweight</h1>
+              <ul>
+                <li>Healthy BMI range: 18.5 kg/m2 - 25 kg/m2</li>
+                <li>Lose 9.7 kgs to reach a BMI of 25 kg/m2.</li>
+                <li>Healthy weight for the height: 66.8 kgs - 90.3 kgs</li>
+                <li>Ponderal Index: 14.6 kg/m3</li>
+              </ul>
+              {% else%}
+              <h1>Obese</h1>
+              <ul>
+                <li>Healthy BMI range: 18.5 kg/m2 - 25 kg/m2</li>
+                <li>Healthy weight for the height: 66.8 kgs - 90.3 kgs</li>
+                <li>Lose 29.7 kgs to reach a BMI of 25 kg/m2.</li>
+                <li>Ponderal Index: 17.5 kg/m3</li>
+              </ul>
+              {% endif %}
+  </div>
+
+</body>
+
+</html>
